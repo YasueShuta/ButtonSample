@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Main {
+  static int count = 0;
+
   public static void main(String[] args) {
     // creating instance of JFrame
     JFrame f = new JFrame();
@@ -15,7 +17,7 @@ public class Main {
 
     // creating instance of JButton, JLabel
     JButton b = new JButton("Click me!");
-    JLabel l = new JLabel("Hello!");
+    JLabel l = new JLabel("Hello!:"+count);
 
     // x axis, y axis, width, height
     //b.setBounds(80, 100, 250, 40);
@@ -25,6 +27,8 @@ public class Main {
     b.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
+        count += 1;
+        l.setText("Hello!:" + count);
         System.out.println(l.getText());
       }
     });
