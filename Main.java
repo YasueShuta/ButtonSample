@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class Main {
@@ -6,13 +7,19 @@ public class Main {
     // creating instance of JFrame
     JFrame f = new JFrame();
 
+    // get container
+    Container contentPane = f.getContentPane();
+
+    // creating instance of JPanel
+    JPanel p = new JPanel();
+
     // creating instance of JButton, JLabel
     JButton b = new JButton("Click me!");
     JLabel l = new JLabel("Hello!");
 
     // x axis, y axis, width, height
-    b.setBounds(80, 100, 250, 40);
-    l.setBounds(80, 30, 250, 40);
+    //b.setBounds(80, 100, 250, 40);
+    //l.setBounds(80, 30, 250, 40);
 
     // add event listener
     b.addActionListener(new ActionListener() {
@@ -22,12 +29,15 @@ public class Main {
       }
     });
 
-    // add button to JFrame
-    f.add(b);
-    f.add(l);
+    // add button to JPanel
+    p.add(b);
+    p.add(l);
+
+    // add panel to content pane
+    contentPane.add(p, BorderLayout.NORTH);
 
     f.setSize(400, 500);
-    f.setLayout(null);
+    //f.setLayout(null);
     // make the frame visible
     f.setVisible(true);
   }
